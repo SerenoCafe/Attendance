@@ -3,16 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff QR Attendance</title>
+    <title>Sereno Cafe - Staff Attendance</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/html5-qrcode"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        #reader {
+            margin: 20px auto;
+            max-width: 500px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #result h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        #lastScan {
+            font-size: 1.1em;
+            color: #34495e;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <h1>SERENO CAFE</h1>
+            <p>Staff Attendance System</p>
+        </div>
+        
         <div id="reader"></div>
         <div id="result">
             <h2>Scan Results</h2>
-            <p id="lastScan"></p>
+            <p id="lastScan">Ready to scan attendance...</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Sereno Cafe. All rights reserved.</p>
         </div>
     </div>
     <script src="config.js"></script>
